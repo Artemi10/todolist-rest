@@ -1,5 +1,6 @@
 package devanmejia.configuration;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
@@ -7,6 +8,8 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @Configuration
 public class CorsConfig {
+    @Value("${allowed-origins.api}")
+    private String allowedOriginAPI;
     @Bean
     public WebMvcConfigurer corsConfigurer(){
        return new WebMvcConfigurer() {
@@ -15,7 +18,7 @@ public class CorsConfig {
                registry.addMapping("/**")
                        .allowedMethods("GET, POST, PUT, DELETE, PATCH")
                        .allowedHeaders("*")
-                       .allowedOrigins("http://localhost:4200", "http://localhost:4201");
+                       .allowedOrigins(allowedOriginAPI);
 
            }
        };
