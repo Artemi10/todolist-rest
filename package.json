@@ -2,14 +2,14 @@
   "name": "todo-list",
   "version": "0.0.0",
   "scripts": {
-    "ng": "src/main/resources/static/node_modules/.bin/ng",
+    "ng": "ng",
     "start": "node server.js",
-    "build": "src/main/resources/static/node_modules/.bin/ng build",
-    "test": "src/main/resources/static/node_modules/.bin/ng test",
-    "lint": "src/main/resources/static/node_modules/.bin/ng lint",
-    "e2e": "src/main/resources/static/node_modules/.bin/ng e2e"
+    "build": "ng build",
+    "test": "ng test",
+    "lint": "ng lint",
+    "e2e": "ng e2e"
   },
-  "heroku-postbuild": "src/main/resources/static/node_modules/.bin/ng build --prod",
+  "heroku-postbuild": "ng build --prod",
   "engines": {
     "node": "v14.13.1",
     "npm": "6.14.8"
