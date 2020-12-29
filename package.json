@@ -9,7 +9,7 @@
     "lint": "src/main/resources/static/node_modules/.bin/ng lint",
     "e2e": "src/main/resources/static/node_modules/.bin/ng e2e"
   },
-  "heroku-postbuild": "ng build --prod",
+  "heroku-postbuild": "src/main/resources/static/node_modules/.bin/ng build --prod",
   "engines": {
     "node": "v14.13.1",
     "npm": "6.14.8"
