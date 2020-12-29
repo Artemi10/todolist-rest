@@ -1,0 +1,25 @@
+.calendar__selector_previous{
+  cursor: pointer;
+  position: absolute;
+  display: inline-block;
+  font-weight: bold;
+  font-size: 30px;
+  top: calc(50% - 20px);
+  left: 20px;
+  padding: 10px;
+}
+.calendar__selector_next{
+  cursor: pointer;
+  position: absolute;
+  display: inline-block;
+  font-weight: bold;
+  font-size: 30px;
+  top: calc(50% - 20px);
+  right: 20px;
+  padding: 10px;
+}
+.calendar__selector_next:hover, .calendar__selector_previous:hover{
+  border-radius: 100%;
+  color: rgb(255, 255, 255);
+  background-color: #ff7f66;
+}

@@ -1,0 +1,8 @@
+<div class="note__day-note" (mouseenter)="noteMouseEnterListener()" (mouseleave)="noteMouseLeaveListener()">
+  <div class="note__day-note-buttons" [style.display]="showDeleteAndEditButtons">
+    <img class="note__day-note-buttons_edit" src="assets/images/edit-icon.png" (click)="clickEditButtonListener()">
+    <small class="note__day-note-buttons_close" (click)="clickDeleteButtonListener(note)">X</small>
+  </div>
+  <input class="note__day-note_content" type="text" disabled  value="{{note.content.toUpperCase()}}" [attr.disabled]="disableInputAttr ? true : null" #noteContentElement/>
+  <img class="note__day-note-buttons_save-edit" [style.display]="showSaveEditButton" src="assets/images/save-edit-icon.png" (click)="clickSaveEditButtonListener(note.id, note.expirationDate)">
+</div>

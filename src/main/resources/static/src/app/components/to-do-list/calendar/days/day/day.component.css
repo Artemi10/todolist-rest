@@ -1,0 +1,8 @@
+.calendar__row__element__note-amount{
+  position: absolute;
+  top: -5px;
+  right: 0;
+  background-color: #ff7f66;
+  color: rgb(255, 255, 255);
+  border-radius: 5px;
+}

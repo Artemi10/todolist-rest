@@ -1,0 +1,95 @@
+@import url(../../styles/scrollbar.css);
+.weekdays{
+  display: flex;
+  display: -webkit-flex;
+  width: 70%;
+  margin: 0 auto;
+  margin-top: 10px;
+}
+.weekdays__day{
+  position: inherit;
+  color: #3e454c;
+  font-weight: bold;
+  font-size: 20px;
+  width: 14%;
+  text-align: center;
+}
+.weekdays__day_weekend{
+  position: inherit;
+  font-weight: bold;
+  font-size: 20px;
+  width: 14%;
+  text-align: center;
+  color: #d11212;
+}
+.calendar{
+  margin: 0 auto;
+  position: absolute;
+  width: 70%;
+  overflow: auto;
+  right: 0;
+  left: 0;
+  top: 100px;
+  bottom: 90px;
+}
+.calendar__selector_previous{
+  cursor: pointer;
+  position: absolute;
+  display: inline-block;
+  font-weight: bold;
+  font-size: 30px;
+  top: calc(50% - 20px);
+  left: 20px;
+  padding: 10px;
+}
+.calendar__selector_next{
+  cursor: pointer;
+  position: absolute;
+  display: inline-block;
+  font-weight: bold;
+  font-size: 30px;
+  top: calc(50% - 20px);
+  right: 20px;
+  padding: 10px;
+}
+.calendar__selector_next:hover, .calendar__selector_previous:hover{
+  border-radius: 100%;
+  color: rgb(255, 255, 255);
+  background-color: #ff7f66;
+}
+
+.calendar__row{
+  display: flex;
+  display: -webkit-flex;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+.calendar__row__element{
+  position: inherit;
+  width: 14%;
+  cursor: pointer;
+}
+.calendar__row__element__day{
+  position: relative;
+  padding: 5px;
+  font-weight: bold;
+  text-align: center;
+  font-size: 18px;
+}
+.calendar__row__element__day_weekend{
+  position: relative;
+  padding: 5px;
+  font-weight: bold;
+  text-align: center;
+  font-size: 18px;
+  color: #d11212;
+}
+.calendar__row__element__day:hover, .calendar__row__element__day_weekend:hover{
+  color: rgb(255, 255, 255);
+  background-color: #ff7f66;
+  border-radius: 5px;
+}
+.calendar__row__element__day_current-day{
+  border: 2px solid #d11212;
+  border-radius: 5px;
+}

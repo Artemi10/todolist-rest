@@ -1,0 +1,18 @@
+<a class="sign-up_href" routerLink="/signUp">SignUp</a>
+<form [formGroup]="logInForm" (ngSubmit)="sendButtonClickListener()" class="log-in__form">
+  <h1 class="log-in__form__header">LogIn Form</h1>
+  <div class="log-in__form__input">
+    <input class="log-in__form__input_login" type="text" placeholder="Login" formControlName="login">
+    <div class="log-in__form__input_warning" *ngIf="logInForm.controls['login'].invalid && logInForm.controls['login'].touched">Please, enter login</div>
+  </div>
+  <div class="log-in__form__input">
+    <input class="log-in__form__input_password" type="password" placeholder="Password" formControlName="password">
+    <div class="log-in__form__input_warning" *ngIf="logInForm.controls['password'].invalid && logInForm.controls['password'].touched">Please, enter password</div>
+  </div>
+  <div class="log-in__form__input">
+    <button class="log-in__form__input_submit" [disabled]="logInForm.invalid">Submit</button>
+  </div>
+</form>
+
+
+

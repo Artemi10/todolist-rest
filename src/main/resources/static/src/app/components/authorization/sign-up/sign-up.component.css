@@ -1,0 +1,70 @@
+.log-in_href{
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  font-size: 18px;
+}
+.log-in_href:hover{
+  text-decoration: none;
+}
+.sign-up__form{
+  position: absolute;
+  margin: 0 auto;
+  top: calc(50% - 625px/2);
+  left: calc(50% - 300px/2);
+  height: 625px;
+  width: 300px;
+  text-align: center;
+  background-color: #f3f3f3;
+  border-radius: 7px;
+}
+.sign-up__form__header{
+  margin-bottom: 20px;
+  color: #3e454c;
+  font-weight: bold;
+  font-size: 24px;
+}
+.sign-up__form__input{
+  height: 80px;
+}
+.sign-up__form__input_login, .sign-up__form__input_password,
+.sign-up__form__input_email, .sign-up__form__input_first-name,
+.sign-up__form__input_last-name, .sign-up__form__input_re-password{
+  width: 70%;
+  height: 30px;
+  background-color: #3e454c;
+  color: #ff7f66;
+  margin-bottom: 10px;
+  border: none;
+  outline: none;
+  font-weight: bold;
+  font-size: 18px;
+  padding: 15px;
+  border-bottom: solid 4px #6a7783;
+  border-radius: 5px;
+}
+.sign-up__form__input_warning{
+  font-size: 18px;
+  margin-bottom: 10px;
+  font-weight: normal;
+  color: #d11212;
+}
+.sign-up__form__input_submit{
+  display: inline-block;
+  background-color: #3e454c;
+  border-radius: 5px;
+  color: #ff7f66;
+  padding: 14px;
+  font-weight: bold;
+  font-size: 18px;
+  border: none;
+  margin-bottom: 20px;
+}
+.sign-up__form__input_submit:hover{
+  color: rgb(255, 255, 255);
+  background-color: #ff7f66;
+}
+.sign-up__form__input_submit, .sign-up__form__input_submit:active, .sign-up__form__input_submit:focus
+{
+  outline: none;
+}

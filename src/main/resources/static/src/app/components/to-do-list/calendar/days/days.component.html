@@ -1,0 +1,21 @@
+<div class="weekdays">
+  <p class="weekdays__day">MON</p>
+  <p class="weekdays__day">TUE</p>
+  <p class="weekdays__day">WED</p>
+  <p class="weekdays__day">THUR</p>
+  <p class="weekdays__day">FRI</p>
+  <p class="weekdays__day_weekend">SAT</p>
+  <p class="weekdays__day_weekend">SUN</p>
+</div>
+<div class="calendar__selector_previous" (click)="leftButtonClickListener()"><</div>
+<div class="calendar__selector_next" (click)="rightButtonClickListener()">></div>
+<div class="calendar">
+<div *ngFor="let week of monthDaysInWeeks" class="calendar__row">
+  <div *ngFor="let day of week" class="calendar__row__element" (click)="clickDayListener(day.toDate().getTime())">
+    <p *ngIf="day!=null" [ngClass]="{'calendar__row__element__day': !isWeekend(day),
+    'calendar__row__element__day_weekend': isWeekend(day), 'calendar__row__element__day_current-day': isCurrentDay(day)}">
+      <app-day [day]="day"></app-day>
+    </p>
+  </div>
+</div>
+</div>
