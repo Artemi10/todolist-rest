@@ -7,11 +7,9 @@ import {MonthNotesService} from "../month-notes/month-notes.service";
   providedIn: 'root'
 })
 export class DayNotesService {
-  public dayNotes: Note[];
+  public dayNotes: Note[] = [];
 
-  constructor(private monthNotesService: MonthNotesService) {
-
-  }
+  constructor(private monthNotesService: MonthNotesService) {}
 
   public findAllNotesByDay(day: number): void{
     let dayNotes: Note[] = [];

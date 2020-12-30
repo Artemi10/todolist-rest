@@ -21,7 +21,7 @@ export class StatusNotesService {
   }
 
   public sortNotesByStatus(){
-    let dayNotes: Note[] = this.dayNoteService.dayNotes!;
+    let dayNotes: Note[] = this.dayNoteService.dayNotes;
     this.doneNotes = this.findNotesByStatus(dayNotes, 'DONE');
     this.activeNotes = this.findNotesByStatus(dayNotes, 'ACTIVE');
     this.pendingNotes = this.findNotesByStatus(dayNotes, 'PENDING');
@@ -29,7 +29,7 @@ export class StatusNotesService {
 
   private findNotesByStatus(dayNotes: Note[], status: string): Note[]{
     let resultNotes: Note[] = [];
-    dayNotes?.filter(note => note.status === status)
+    dayNotes.filter(note => note.status === status)
       .forEach(note => resultNotes.push(note))
     return resultNotes;
   }

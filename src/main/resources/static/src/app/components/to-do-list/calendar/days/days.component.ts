@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {Component} from '@angular/core';
 import {Moment} from "moment";
 import {CalendarDateService} from "../../../../services/calendar-date/calendar-date.service";
 
@@ -8,7 +8,6 @@ import {CalendarDateService} from "../../../../services/calendar-date/calendar-d
   styleUrls: ['./days.component.css']
 })
 export class DaysComponent {
-  @Input() monthDaysInWeeks: Moment[][];
 
   constructor(public calendarDate: CalendarDateService) {}
 

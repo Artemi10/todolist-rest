@@ -9,8 +9,8 @@
   </div>
 </div>
 <div class="notes__current-notes">
-  <p class="note__day-note_empty" *ngIf="dayNotesService.dayNotes!.length==0">There is not planned notes</p>
-  <app-note [note]="note"  *ngFor="let note of dayNotesService.dayNotes!"></app-note>
+  <p class="note__day-note_empty" *ngIf="dayNotesService.dayNotes.length==0">There is not planned notes</p>
+  <app-note [note]="note"  *ngFor="let note of dayNotesService.dayNotes"></app-note>
   <app-add-note-panel [style.display]="showAddNotePanel" [currentDateNumber]="calendarDate.getTime()"></app-add-note-panel>
 </div>
 <div class="notes__buttons">

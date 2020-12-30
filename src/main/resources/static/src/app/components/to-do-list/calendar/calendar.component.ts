@@ -4,7 +4,6 @@ import {Note} from "../../../models/note.model";
 import {ChartNotesService} from "../../../services/chart/chart-notes.service";
 import {StatusNotesService} from "../../../services/notes-status/status-notes.service";
 import {CalendarDateService} from "../../../services/calendar-date/calendar-date.service";
-import {DayNotesService} from "../../../services/day-notes/day-notes.service";
 
 
 @Component({
@@ -20,8 +19,15 @@ export class CalendarComponent {
   public showCalendarFlag: boolean = true;
 
 
-  constructor(public calendarDate: CalendarDateService) {
+  constructor(public monthNoteService: MonthNotesService, private chartNotesService: ChartNotesService,
+              private statusNotesService: StatusNotesService, public calendarDate: CalendarDateService) {
     calendarDate.setTme(new Date());
+    monthNoteService.findAllNotesByTimeline(calendarDate.getFirstDayInMonth(), calendarDate.getLastDayInMonth())
+      .then((notesDTO: Note[])=>{
+        this.monthNoteService.allNotes = notesDTO;
+        this.statusNotesService.sortNotesByStatus();
+        this.chartNotesService.openAllCharts(calendarDate);
+      })
   }
 
 

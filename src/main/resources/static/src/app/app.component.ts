@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
-
-
+import {Note} from "./models/note.model";
+import {StatusNotesService} from "./services/notes-status/status-notes.service";
+import {MonthNotesService} from "./services/month-notes/month-notes.service";
+import {ChartNotesService} from "./services/chart/chart-notes.service";
 
 @Component({
   selector: 'app-root',
@@ -10,5 +12,5 @@ import { Component } from '@angular/core';
 export class AppComponent{
   public title = 'todoList';
 
-  constructor() {}
+
 }

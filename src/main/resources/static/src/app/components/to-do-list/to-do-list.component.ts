@@ -1,5 +1,4 @@
 import { Component} from '@angular/core';
-import {CalendarDateService} from "../../services/calendar-date/calendar-date.service";
 
 @Component({
   selector: 'app-to-do-list',
@@ -8,7 +7,5 @@ import {CalendarDateService} from "../../services/calendar-date/calendar-date.se
 })
 export class ToDoListComponent {
 
-  constructor(private calendarDate: CalendarDateService) {
-    calendarDate.setTme(new Date());
-  }
+  constructor() {}
 }

@@ -18,8 +18,8 @@ export class CalendarDateService {
     this.monthNoteService.findAllNotesByTimeline(this.getFirstDayInMonth(), this.getLastDayInMonth())
       .then((notesDTO: Note[])=>{
         this.monthNoteService.allNotes = notesDTO;
-        this.dayNotesService.findAllNotesByDay(this.getTime());
         this.notesStatusService.sortNotesByStatus();
+        this.dayNotesService.findAllNotesByDay(this.getTime());
         this.chartService.openAllCharts(this);
       })
   }
@@ -31,8 +31,8 @@ export class CalendarDateService {
       this.monthNoteService.findAllNotesByTimeline(this.getFirstDayInMonth(), this.getLastDayInMonth())
         .then((notesDTO: Note[])=>{
           this.monthNoteService.allNotes = notesDTO;
-          this.dayNotesService.findAllNotesByDay(this.getTime());
           this.notesStatusService.sortNotesByStatus();
+          this.dayNotesService.findAllNotesByDay(this.getTime());
           this.chartService.openAllCharts(this);
         })
     }

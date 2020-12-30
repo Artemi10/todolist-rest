@@ -10,7 +10,7 @@
   </p>
   <p class="date__next-year"> {{calendarDate.getYear() + 1}}</p>
 </div>
-<app-days [monthDaysInWeeks]="calendarDate.getWeeksInMonth()" [attr.hidden]="!showCalendarFlag ? true : null"></app-days>
+<app-days [attr.hidden]="!showCalendarFlag ? true : null"></app-days>
 <app-charts [attr.hidden]="!showChartFlag ? true : null"></app-charts>
 <app-note-status-panel [attr.hidden]="!showDayNotesStatusesFlag ? true : null"></app-note-status-panel>
 <div class="calendar-component__buttons">
