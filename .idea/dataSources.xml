@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="todoListDB" uuid="973d1c36-04f2-4580-858d-9380e76bb0a7">
-      <driver-ref>mysql.8</driver-ref>
-      <synchronize>true</synchronize>
-      <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
-      <jdbc-url>jdbc:mysql://localhost:3306/todolist?serverTimezone=Europe/Moscow</jdbc-url>
-    </data-source>
     <data-source source="LOCAL" name="todolistDBHeroku" uuid="7a7b5ccb-f014-49dc-9275-188bda904b83">
       <driver-ref>postgresql</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
       <jdbc-url>jdbc:postgresql://ec2-54-247-71-245.eu-west-1.compute.amazonaws.com:5432/d9lq27svqj23a1</jdbc-url>
+    </data-source>
+    <data-source source="LOCAL" name="jdbc:mysql://localhost:3306/todolist?serverTimezone=Europe/Moscow" uuid="a260481f-624f-407d-b257-afe37b7e15c6">
+      <driver-ref>mysql.8</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://localhost:3306/todolist?serverTimezone=Europe/Moscow</jdbc-url>
     </data-source>
   </component>
 </project>

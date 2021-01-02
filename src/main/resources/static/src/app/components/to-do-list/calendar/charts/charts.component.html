@@ -1,4 +1,0 @@
-<div class="calendar__selector_previous" (click)="leftButtonClickListener()"><</div>
-<div class="calendar__selector_next" (click)="rightButtonClickListener()">></div>
-<app-chart *ngFor="let key of chartTypesMapKeys" [typeName]="chartTypesMap.get(key).type" [attr.hidden]="chartTypesMap.get(key).hidden ? true : null"></app-chart>
-

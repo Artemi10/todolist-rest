@@ -1,5 +1,6 @@
 package devanmejia.configuration.security.jwt;
 
+import devanmejia.models.RefreshTokens;
 import io.jsonwebtoken.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -12,6 +13,7 @@ import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
 import javax.servlet.http.HttpServletRequest;
+import java.util.Arrays;
 import java.util.Base64;
 import java.util.Date;
 
@@ -44,7 +46,7 @@ public class JWTProvider {
     }
 
     public Authentication getAuthentication(String token){
-       UserDetails userDetails = userDetailsService.loadUserByUsername(getUserName(token));
+        UserDetails userDetails = userDetailsService.loadUserByUsername(getUserName(token));
         return new UsernamePasswordAuthenticationToken(userDetails, "", userDetails.getAuthorities());
 
     }
@@ -73,4 +75,5 @@ public class JWTProvider {
             throw new JWTAuthenticationException("JWT is expired or invalid "+ e.getMessage());
         }
     }
+
 }

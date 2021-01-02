@@ -3,6 +3,7 @@ package devanmejia.configuration.security;
 
 import devanmejia.configuration.security.jwt.JWTProvider;
 import devanmejia.configuration.security.jwt.JWTSecurityConfig;
+import devanmejia.models.RefreshTokens;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -25,11 +26,12 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http
                 .csrf().disable()
-                .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
+                .sessionManagement()
+                    .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 .and()
                 .authorizeRequests()
-                .antMatchers("/api/notes/**", "/api/users/**").fullyAuthenticated()
-                .antMatchers("/logIn", "/signUp").permitAll()
+                    .antMatchers("/api/auth/**").permitAll()
+                    .antMatchers("/api/notes/**", "/api/users/**").fullyAuthenticated()
                 .and()
                 .apply(new JWTSecurityConfig(jwtProvider));
         http.cors();
@@ -44,4 +46,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     public PasswordEncoder passwordEncoder(){
         return new BCryptPasswordEncoder();
     }
+
+    @Bean
+    public RefreshTokens refreshTokens(){return RefreshTokens.getInstance();}
 }
