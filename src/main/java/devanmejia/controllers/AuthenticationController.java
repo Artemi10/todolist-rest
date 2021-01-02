@@ -68,4 +68,8 @@ public class AuthenticationController {
             return new ResponseEntity<>(e.getMessage(), HttpStatus.NOT_FOUND);
         }
     }
+    @GetMapping("/test")
+    public ResponseEntity<Object> test(){
+        return new ResponseEntity<>("Test", HttpStatus.OK);
+    }
 }
