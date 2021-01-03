@@ -25,5 +25,6 @@ public class User {
     private String email;
     @OneToMany(mappedBy = "userOwner")
     private List<Note> notes;
+    private String refreshToken;
 
 }

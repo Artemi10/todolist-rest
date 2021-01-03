@@ -1,4 +1,4 @@
-package devanmejia.transfer;
+package devanmejia.models;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -6,7 +6,7 @@ import lombok.Data;
 
 @AllArgsConstructor
 @Data
-public class TokensDTO {
+public class Tokens {
     private String accessToken;
     private String refreshToken;
 }

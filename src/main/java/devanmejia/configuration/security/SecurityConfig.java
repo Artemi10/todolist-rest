@@ -3,7 +3,6 @@ package devanmejia.configuration.security;
 
 import devanmejia.configuration.security.jwt.JWTProvider;
 import devanmejia.configuration.security.jwt.JWTSecurityConfig;
-import devanmejia.models.RefreshTokens;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -47,6 +46,4 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         return new BCryptPasswordEncoder();
     }
 
-    @Bean
-    public RefreshTokens refreshTokens(){return RefreshTokens.getInstance();}
 }
