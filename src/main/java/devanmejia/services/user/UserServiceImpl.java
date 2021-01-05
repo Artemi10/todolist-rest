@@ -43,7 +43,7 @@ public class UserServiceImpl implements UserService {
             User user = userOptional.get();
             String newRefreshToken = updateRefreshToken(user);
             String accessToken = jwtProvider.createToken(user.getLogin());
-            return new Tokens(newRefreshToken, accessToken);
+            return new Tokens(accessToken, newRefreshToken);
         }
         throw new IllegalArgumentException("No such refresh token");
     }

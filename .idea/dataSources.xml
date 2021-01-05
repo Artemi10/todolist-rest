@@ -7,7 +7,7 @@
       <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
       <jdbc-url>jdbc:mysql://localhost:3306/todolist?serverTimezone=Europe/Moscow</jdbc-url>
     </data-source>
-    <data-source source="LOCAL" name="d9lq27svqj23a1@ec2-54-247-71-245.eu-west-1.compute.amazonaws.com" uuid="9621c69d-9b5a-408c-a009-63d4ec172cd1">
+    <data-source source="LOCAL" name="d9lq27svqj23a1@ec2-54-247-71-245.eu-west-1.compute.amazonaws.com" uuid="7dc080e1-b1a0-4d07-96f9-14af4cd9ff91">
       <driver-ref>postgresql</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
