@@ -8,11 +8,9 @@ import org.springframework.stereotype.Service;
 
 @Service
 public interface UserService {
-    Tokens logIn(LogInBody logInBody);
-    Tokens signUp(SignUpBody signUpBody);
+    User logIn(LogInBody logInBody);
+    User signUp(SignUpBody signUpBody);
     User getUser(Long id);
     User getUser(String login);
     User createNewActiveUser(SignUpBody signUpBody);
-    Tokens updateTokensByRefreshTokens(String refreshToken);
-    void deleteRefreshToken(String refreshToken);
 }
