@@ -4,6 +4,7 @@ import devanmejia.configuration.security.jwt.JWTProvider;
 import devanmejia.models.Timeline;
 import devanmejia.models.entities.Note;
 import devanmejia.models.entities.NoteStatus;
+import devanmejia.repositories.NoteRepository;
 import devanmejia.services.note.NoteService;
 import devanmejia.transfer.NoteDTO;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,7 +23,6 @@ public class NoteController {
     private NoteService noteService;
     @Autowired
     private JWTProvider jwtProvider;
-
 
     @GetMapping("/notes/date/{firstDay}/{lastDay}")
     public ResponseEntity<Object> getAllNotes(@PathVariable Long firstDay, @PathVariable Long lastDay, HttpServletRequest request){
@@ -86,4 +86,5 @@ public class NoteController {
             return new ResponseEntity<>(e.getMessage(), HttpStatus.NOT_FOUND);
         }
     }
+
 }

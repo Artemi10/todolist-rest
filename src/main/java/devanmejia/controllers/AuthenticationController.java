@@ -29,7 +29,7 @@ public class AuthenticationController {
             Tokens tokens = tokensService.generateNewUserTokens(user);
             return new ResponseEntity<>(tokens, HttpStatus.OK);
         }catch (Exception e){
-            return new ResponseEntity<>(e.getMessage(), HttpStatus.NOT_FOUND);
+            return new ResponseEntity<>("Your login and password are incorrect", HttpStatus.UNAUTHORIZED);
         }
     }
 
@@ -40,7 +40,7 @@ public class AuthenticationController {
             Tokens tokens = tokensService.generateNewUserTokens(user);
             return new ResponseEntity<>(tokens, HttpStatus.OK);
         }catch (Exception e){
-            return new ResponseEntity<>(e.getMessage(), HttpStatus.NOT_FOUND);
+            return new ResponseEntity<>(String.format("User %s has already been registered", signUpBody.getLogin()), HttpStatus.UNAUTHORIZED);
         }
     }
 
@@ -63,4 +63,5 @@ public class AuthenticationController {
             return new ResponseEntity<>(e.getMessage(), HttpStatus.NOT_FOUND);
         }
     }
+
 }
