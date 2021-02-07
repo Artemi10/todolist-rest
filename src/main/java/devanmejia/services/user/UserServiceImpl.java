@@ -36,10 +36,13 @@ public class UserServiceImpl implements UserService {
         Optional<User> userCandidate = userRepository.findByLogin(signUpBody.getLogin());
         if(!userCandidate.isPresent()) {
             User user = createNewActiveUser(signUpBody);
-            userRepository.save(user);
+            User createdUser = userRepository.save(user);
             authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(signUpBody.getLogin(), signUpBody.getPassword()));
+            return createdUser;
         }
-        throw new IllegalArgumentException("User with login " + signUpBody.getLogin() + " has already been registered");
+        else{
+            throw new IllegalArgumentException("User with login " + signUpBody.getLogin() + " has already been registered");
+        }
     }
 
 
